@@ -177,5 +177,5 @@ SOFTWARE.
 
 ---
 
-Enjoy using this Dockerized Product Data Project! If you have questions or suggestions, open an issue or PR. Happy coding!
+Enjoy using this Dockerized Product Data Project! Happy coding!
 
