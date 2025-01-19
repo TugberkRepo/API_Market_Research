@@ -154,7 +154,7 @@ Ensure `docker-compose.yml` references these variables (e.g., `MYSQL_USER: ${MYS
 ```plaintext
 MIT License
 
-Copyright (c) 2025 Tuğberk Erdoğmuş
+Copyright (c) 2025 Tugberk Erdogmus
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
