@@ -39,3 +39,31 @@ A portable, **Docker-based** system for **pulling daily product data** from an e
 
 ## Project Structure
 
+my-docker-product-project/ ├── docker-compose.yml # Defines services (MySQL, Streamlit, etc.) ├── .env # Environment variables for MySQL & scripts ├── requirements.txt # Python dependencies (pandas, streamlit, etc.) ├── final_dev.py # Daily data ingestion script ├── streamlit_app.py # Main Streamlit dashboard code ├── Dockerfile # (Optional) For building Python environment ├── README.md # This README └── ... # Other scripts or data files as needed
+
+
+### Key Files
+
+- **`final_dev.py`**:  
+  Pulls data from an external API, cleans it, and inserts into MySQL daily.  
+
+- **`streamlit_app.py`**:  
+  Runs the Streamlit UI. Users can apply filters, view tables, and explore charts.
+
+---
+
+## Prerequisites
+
+1. **Docker** (v20+ recommended).  
+2. **Docker Compose** (v2+ or the Docker plugin).  
+3. **(Optional) Python** if you want to run scripts outside Docker or debug locally.
+
+---
+
+## Installation & Usage
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/<YourUsername>/my-docker-product-project.git
+   cd my-docker-product-project
+
