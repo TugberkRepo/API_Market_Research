@@ -1,0 +1,57 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: my_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - my_db_data:/var/lib/mysql
+    networks:
+      - localnet
+
+  python-app:
+    build: .
+    container_name: my_python_app
+    depends_on:
+      - db
+    environment:
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_HOST: db
+      MYSQL_PORT: ${MYSQL_PORT}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_TABLE: ${MYSQL_TABLE}
+      API_KEYS: ${API_KEYS}
+    networks:
+      - localnet
+
+  streamlit-app:
+    build:
+      context: ./streamlit_app
+      dockerfile: Dockerfile
+    container_name: my_streamlit_app
+    depends_on:
+      - db
+    environment:
+      # Pass same MySQL env vars to streamlit
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_HOST: db
+      MYSQL_PORT: ${MYSQL_PORT}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_TABLE: ${MYSQL_TABLE}
+    ports:
+      - "8501:8501"   # Host port 8501 -> container port 8501
+    networks:
+      - localnet
+
+networks:
+  localnet:
+
+volumes:
+  my_db_data:
