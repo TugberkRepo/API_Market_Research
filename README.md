@@ -11,7 +11,7 @@ A portable, **Docker-based** system for **pulling daily product data** from an e
 - [Prerequisites](#prerequisites)
 - [Installation & Usage](#installation--usage)
 - [Environment Variables](#environment-variables)
-- [Screenshots (Optional)](#screenshots-optional)
+- [Screenshots](#screenshots-optional)
 - [Future Improvements](#future-improvements)
 - [License](#license)
 
@@ -47,7 +47,7 @@ my-docker-product-project/
 ├── requirements.txt          # Python dependencies (pandas, streamlit, etc.)
 ├── final_dev.py              # Daily data ingestion script
 ├── streamlit_app.py          # Main Streamlit dashboard code
-├── Dockerfile                # (Optional) For building Python environment
+├── Dockerfile                # For building Python environment
 ├── README.md                 # This README
 └── ...                       # Other scripts or data files as needed
 ```
@@ -121,20 +121,22 @@ MYSQL_DATABASE=productcatalog
 # API_KEYS=key1,key2,...
 ```
 
-Ensure `docker-compose.yml` references these variables (e.g., `MYSQL_USER: ${MYSQL_USER}`). **Do not commit real credentials to a public repo.**
+Ensure `docker-compose.yml` references these variables (e.g., `MYSQL_USER: ${MYSQL_USER}`).
 
 ---
 
-## Screenshots (Optional)
+## Screenshots
 
 ### Main Dashboard
-*(Insert screenshot with sidebar filters and main table.)*
+![image](https://github.com/user-attachments/assets/4fb9cbaa-c5a1-40c7-95bf-cff6821afb70)
+![image](https://github.com/user-attachments/assets/78d0e804-09fc-4acb-9b8c-c7855a07b0da)
 
 ### Distributor vs. Unit Price
-*(Insert bar chart screenshot.)*
+![image](https://github.com/user-attachments/assets/068966b4-b50a-42fa-8be6-1681b2b4235a)
+![image](https://github.com/user-attachments/assets/2135b2b8-f942-4f0e-a531-2d0da667cbc3)
 
 ### Single-Part View
-*(Include an image showing the time-based line chart and product image.)*
+![image](https://github.com/user-attachments/assets/a9ad03d5-ebbb-4d6a-b33a-bc8c5035bb0f)
 
 ---
 
@@ -149,14 +151,12 @@ Ensure `docker-compose.yml` references these variables (e.g., `MYSQL_USER: ${MYS
 
 ## License
 
-*(Optional)*
-
 For example:
 
 ```plaintext
 MIT License
 
-Copyright (c) 2025 <YourName>
+Copyright (c) 2025 Tuğberk Erdoğmuş
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
