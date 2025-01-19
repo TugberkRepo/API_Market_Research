@@ -151,8 +151,6 @@ Ensure `docker-compose.yml` references these variables (e.g., `MYSQL_USER: ${MYS
 
 ## License
 
-For example:
-
 ```plaintext
 MIT License
 
@@ -180,3 +178,4 @@ SOFTWARE.
 ---
 
 Enjoy using this Dockerized Product Data Project! If you have questions or suggestions, open an issue or PR. Happy coding!
+
